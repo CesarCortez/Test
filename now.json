@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "name": "vue",
+    "builds": [
+        { "src": "package.json", "use": "@now/static-build" },
+        { "src": "src/index.js", "use": "@now/node-server" },
+        { "src": "src/models/tasks.js", "use": "@now/node" },
+        { "src": "src/models/operadores.js", "use": "@now/node" },
+        { "src": "src/routes/tasks.js", "use": "@now/node" },
+        { "src": "src/routes/OperadoresRoutes.js", "use": "@now/node" },
+        { "src": "src/app/indexFront.js", "use": "@now/static" },
+        { "src": "src/public/index.html", "use": "@now/static" },
+        { "src": "src/public/js/bundle.js", "use": "@now/static" },
+        { "src": "src/app/components/App.vue", "use": "@now/static" },
+        { "src": "src/app/components/Operadores.vue", "use": "@now/static" },
+        { "src": "src/app/components/App.vue", "use": "@now/static" },
+        { "src": "src/app/components/Tasks.vue", "use": "@now/static" }
+    ],
+    "routes":
+    [
+
+        { "src": "/","dest": "src/public/index.html"},
+        { "src": "/Tasks","dest": "src/public/index.html"},
+        { "src": "/Operadores","dest": "src/public/index.html"},
+        { "src": "/api/Tasks","dest": "src/index.js"},
+        { "src": "/api/Operadores","dest": "src/index.js"}
+        
+    ]
+}
